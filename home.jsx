@@ -89,7 +89,7 @@ function Home({ go, addToCart }) {
       {/* ---------- JAMAICA RELIEF FEATURE ---------- */}
       <section className="section">
         <div className="wrap">
-          <div className="card" style={{ overflow: "hidden", borderRadius: "var(--r-xl)", display: "grid", gridTemplateColumns: "1.1fr 1fr", boxShadow: "var(--shadow)" }}>
+          <div className="card hero-grid" style={{ overflow: "hidden", borderRadius: "var(--r-xl)", display: "grid", gridTemplateColumns: "1.1fr 1fr", boxShadow: "var(--shadow)" }}>
             <div style={{ position: "relative" }}>
               <Media src="assets/jamaica.png" kind="ph--clay" label="Families receiving relief after Storm Melissa" style={{ borderRadius: 0, height: "100%", minHeight: 320 }} />
               <button onClick={() => go("program", { id: "jamaica" })} aria-label="Play"

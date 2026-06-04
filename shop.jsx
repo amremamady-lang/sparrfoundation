@@ -130,16 +130,18 @@ function Cart({ cart, setQty, removeItem, go, roundUp, setRoundUp }) {
         <div style={{ display: "grid", gridTemplateColumns: "1.6fr .9fr", gap: 36, alignItems: "start" }} className="cart-grid">
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
             {lines.map(l => (
-              <div key={l.id} className="card" style={{ padding: 16, display: "flex", gap: 18, alignItems: "center", borderRadius: "var(--r)" }}>
+              <div key={l.id} className="card cart-row" style={{ padding: 16, display: "flex", gap: 18, alignItems: "center", borderRadius: "var(--r)" }}>
                 <Ph kind={l.p.ph} label="" style={{ width: 92, height: 92, borderRadius: 12, flex: "0 0 auto" }} />
-                <div style={{ flex: 1, minWidth: 0 }}>
+                <div className="cart-row-main" style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 11, fontFamily: "var(--mono)", textTransform: "uppercase", letterSpacing: ".08em", color: "var(--ink-3)" }}>Gallo collection</div>
                   <h3 style={{ fontSize: 19, marginTop: 3, cursor: "pointer" }} onClick={() => go("product", { id: l.id })}>{l.p.name}</h3>
                   <div style={{ fontSize: 13, color: "var(--ink-3)", marginTop: 3 }}>{SF.money(l.p.price)} each</div>
                 </div>
-                <Stepper qty={l.qty} setQty={(n) => setQty(l.id, n)} small />
-                <div style={{ width: 88, textAlign: "right", fontWeight: 700, fontSize: 17 }}>{SF.money(l.p.price * l.qty)}</div>
-                <button onClick={() => removeItem(l.id)} aria-label="Remove" style={{ border: "none", background: "transparent", color: "var(--ink-3)", cursor: "pointer", padding: 6 }}><I.close width="18" height="18" /></button>
+                <div className="cart-row-actions" style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <Stepper qty={l.qty} setQty={(n) => setQty(l.id, n)} small />
+                  <div style={{ width: 88, textAlign: "right", fontWeight: 700, fontSize: 17 }}>{SF.money(l.p.price * l.qty)}</div>
+                  <button onClick={() => removeItem(l.id)} aria-label="Remove" style={{ border: "none", background: "transparent", color: "var(--ink-3)", cursor: "pointer", padding: 6 }}><I.close width="18" height="18" /></button>
+                </div>
               </div>
             ))}
             <button className="linkish" onClick={() => go("shop")} style={{ marginTop: 8 }}><I.arrow style={{ transform: "rotate(180deg)" }} /> Continue shopping</button>
