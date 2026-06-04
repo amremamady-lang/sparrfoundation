@@ -217,32 +217,3 @@ function Toast({ msg, onDone }) {
 }
 window.Toast = Toast;
 
-/* ---------- Theme switcher (2 colours) ---------- */
-function ThemeSwitcher() {
-  const [theme, setTheme] = useState(() => localStorage.getItem("sf_theme") || "clay");
-  useEffect(() => {
-    if (theme === "clay") document.documentElement.removeAttribute("data-theme");
-    else document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("sf_theme", theme);
-  }, [theme]);
-  const opts = [
-    { id: "clay", label: "Amber", swatch: "#C2671B" },
-    { id: "pine", label: "Pine", swatch: "#356A52" },
-  ];
-  return (
-    <div style={{ position: "fixed", left: 18, bottom: 18, zIndex: 120, display: "flex", alignItems: "center", gap: 8,
-      background: "var(--card)", border: "1px solid var(--line)", borderRadius: 100, padding: "7px 8px 7px 14px", boxShadow: "var(--shadow)" }}>
-      <span style={{ fontFamily: "var(--mono)", fontSize: 10.5, letterSpacing: ".12em", textTransform: "uppercase", color: "var(--ink-3)" }}>Colour</span>
-      {opts.map(o => {
-        const active = theme === o.id;
-        return (
-          <button key={o.id} onClick={() => setTheme(o.id)} title={o.label} aria-label={o.label}
-            style={{ width: 26, height: 26, borderRadius: "50%", cursor: "pointer", background: o.swatch,
-              border: active ? "2px solid var(--ink)" : "2px solid transparent",
-              outline: active ? "0" : "0", boxShadow: active ? "0 0 0 2px var(--card) inset" : "none", transition: "border-color .15s" }} />
-        );
-      })}
-    </div>
-  );
-}
-window.ThemeSwitcher = ThemeSwitcher;

@@ -115,7 +115,7 @@ function Home({ go, addToCart }) {
 
       {/* ---------- WINE & DINE ---------- */}
       <section className="section band-forest">
-        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(28px,5vw,72px)", alignItems: "center" }}>
+        <div className="wrap hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(28px,5vw,72px)", alignItems: "center" }}>
           <div>
             <div className="eyebrow-row"><span className="rule" style={{ background: "#fff", opacity: .6 }} /><span className="h-eyebrow" style={{ color: "#D9E6DC" }}>Annual fundraiser</span></div>
             <h2 style={{ fontSize: "clamp(30px,4vw,52px)", color: "#fff" }}>Wine &amp; Dine</h2>

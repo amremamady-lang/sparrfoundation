@@ -67,7 +67,6 @@ function App() {
       <div key={route.name + JSON.stringify(route.params)}>{screen}</div>
       <Footer go={go} />
       {toastMsg && <Toast msg={toastMsg} onDone={() => setToastMsg(null)} />}
-      <ThemeSwitcher />
     </React.Fragment>
   );
 }

@@ -22,7 +22,7 @@ function About({ go }) {
 
       {/* mission narrative */}
       <section className="section">
-        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "0.8fr 1.2fr", gap: "clamp(24px,5vw,72px)", alignItems: "start" }}>
+        <div className="wrap hero-grid" style={{ display: "grid", gridTemplateColumns: "0.8fr 1.2fr", gap: "clamp(24px,5vw,72px)", alignItems: "start" }}>
           <div style={{ position: "sticky", top: 96 }}>
             <div className="eyebrow-row"><span className="rule" /><span className="h-eyebrow">Who we are</span></div>
             <h2 style={{ fontSize: "clamp(28px,3.4vw,44px)" }}>United we <em style={{ color: "var(--accent)" }}>stand.</em></h2>
@@ -64,7 +64,7 @@ function About({ go }) {
         <div className="wrap">
           <SectionHead eyebrow="The people" title={<>Warm, hands-on, <em>relentless.</em></>} />
           {SF.team.map((m, i) => (
-            <div key={i} className="card" style={{ overflow: "hidden", borderRadius: "var(--r-xl)", marginTop: 40, display: "grid", gridTemplateColumns: "1fr 1.3fr" }}>
+            <div key={i} className="card hero-grid" style={{ overflow: "hidden", borderRadius: "var(--r-xl)", marginTop: 40, display: "grid", gridTemplateColumns: "1fr 1.3fr" }}>
               <Ph kind={m.ph} label={"portrait: " + m.name} style={{ borderRadius: 0, minHeight: 300, height: "100%" }} />
               <div style={{ padding: "clamp(28px,3.5vw,48px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontSize: "clamp(26px,3vw,34px)" }}>{m.name}</h3>
@@ -96,7 +96,7 @@ function Programs({ go }) {
       <section className="section-sm">
         <div className="wrap" style={{ display: "flex", flexDirection: "column", gap: 26 }}>
           {SF.programs.map((p, i) => (
-            <Reveal key={p.id} delay={i * 70} className="card card--hover" style={{ overflow: "hidden", borderRadius: "var(--r-xl)", display: "grid", gridTemplateColumns: i % 2 ? "1fr 1.1fr" : "1.1fr 1fr" }}>
+            <Reveal key={p.id} delay={i * 70} className="card card--hover hero-grid" style={{ overflow: "hidden", borderRadius: "var(--r-xl)", display: "grid", gridTemplateColumns: i % 2 ? "1fr 1.1fr" : "1.1fr 1fr" }}>
               <div style={{ order: i % 2 ? 2 : 1 }}>
                 <Media src={p.img} kind={p.ph} label={p.phLabel} style={{ borderRadius: 0, height: "100%", minHeight: 300 }} />
               </div>
@@ -143,7 +143,7 @@ function ProgramDetail({ params, go }) {
       </section>
 
       <section className="section-sm band-2">
-        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(28px,5vw,64px)", alignItems: "center" }}>
+        <div className="wrap hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(28px,5vw,64px)", alignItems: "center" }}>
           <div>
             <SectionHead eyebrow="Stand with us" title={<>Love &amp; <em>Humanity.</em></>} />
             <p className="lead" style={{ marginTop: 18 }}>
@@ -282,7 +282,7 @@ function Events({ go, toast }) {
   return (
     <main>
       <section className="band-forest section-sm" style={{ paddingTop: "clamp(40px,6vw,80px)" }}>
-        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "clamp(28px,5vw,64px)", alignItems: "center" }} className="hero-grid">
+        <div className="wrap hero-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "clamp(28px,5vw,64px)", alignItems: "center" }}>
           <div>
             <div className="eyebrow-row"><span className="rule" style={{ background: "#fff", opacity: .6 }} /><span className="h-eyebrow" style={{ color: "#D9E6DC" }}>Annual fundraiser</span></div>
             <h1 className="display" style={{ fontSize: "clamp(40px,6.5vw,86px)", color: "#fff" }}>Wine &amp;<br/><em style={{ color: "#F4D9C4" }}>Dine.</em></h1>
@@ -300,7 +300,7 @@ function Events({ go, toast }) {
       </section>
 
       <section className="section">
-        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(28px,5vw,64px)", alignItems: "center" }}>
+        <div className="wrap hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(28px,5vw,64px)", alignItems: "center" }}>
           <div>
             <SectionHead eyebrow="Register your interest" title={<>Save me a <em>seat.</em></>} />
             <p className="lead" style={{ marginTop: 16 }}>Let us know you'd like to come and we'll be in touch with the details. Tickets and contributions are handled directly by the Foundation.</p>

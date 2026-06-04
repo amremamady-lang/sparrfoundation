@@ -51,29 +51,6 @@
   --shadow-lg: 0 10px 26px rgba(34,28,24,.10), 0 34px 70px rgba(34,28,24,.13);
 }
 
-/* ---- Theme B · PINE (cool green on oat) ---- */
-[data-theme="pine"] {
-  --bg:        #F1F0E8;
-  --bg-2:      #E6E5DA;
-  --card:      #FCFCF7;
-  --ink:       #1F2622;
-  --ink-2:     #5C6560;
-  --ink-3:     #919A93;
-  --line:      rgba(31,38,34,0.13);
-  --line-2:    rgba(31,38,34,0.07);
-
-  --accent:    #356A52;
-  --accent-700:#244C3A;
-  --accent-300:#A6C3B3;
-  --accent-50: #E1EBE3;
-
-  --dark:      #1A211C;
-  --dark-2:    #232C26;
-
-  --ph-neutral:#DCDDCF;
-  --ph-accent: #C3D4C5;
-}
-
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
@@ -314,6 +291,11 @@ select.inp { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.
   .ubar-inner { justify-content: center; }
   .ubar-right { gap: 16px; }
   .ubar-item:first-child { display: none; }
+}
+@media (max-width: 560px) {
+  .cols-4 { grid-template-columns: 1fr; }
+  /* keep programs cards readable: image-then-text on mobile regardless of i%2 */
+  .hero-grid > * { order: 0 !important; }
 }
 
 /* scrollbar polish */
